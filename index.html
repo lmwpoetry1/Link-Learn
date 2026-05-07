@@ -123,12 +123,12 @@ h1,h2,h3,h4{font-family:'Syne',sans-serif}
     <span style="margin-left:auto;font-size:16px;color:var(--gold)">→</span>
   </a>
   <div class="tabs" id="tabs">
-    <button class="tab active" onclick="switchTab('features')">LinkedIn Features</button>
-    <button class="tab" onclick="switchTab('schedule')">30-Min System</button>
-    <button class="tab" onclick="switchTab('analytics')">Analytics</button>
-    <button class="tab" onclick="switchTab('checklist')">Weekly Checklist</button>
-    <button class="tab" onclick="switchTab('burnout')">Burnout Guard</button>
-    <button class="tab" onclick="switchTab('cta')">CTA Builder</button>
+    <button class="tab active" onclick="switchTab('features')" data-tab="features">LinkedIn Features</button>
+    <button class="tab" onclick="switchTab('schedule')" data-tab="schedule">30-Min System</button>
+    <button class="tab" onclick="switchTab('analytics')" data-tab="analytics">Analytics</button>
+    <button class="tab" onclick="switchTab('checklist')" data-tab="checklist">Weekly Checklist</button>
+    <button class="tab" onclick="switchTab('burnout')" data-tab="burnout">Burnout Guard</button>
+    <button class="tab" onclick="switchTab('cta')" data-tab="cta">CTA Builder</button>
   </div>
 </div>
 
@@ -511,8 +511,8 @@ function switchTab(id){
   document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  const tabs={features:0,schedule:1,analytics:2,checklist:3,burnout:4,cta:5};
-  document.querySelectorAll('.tab')[tabs[id]].classList.add('active');
+  var btn=document.querySelector('.tab[data-tab="'+id+'"]');
+  if(btn) btn.classList.add('active');
 }
 
 function toggleCheck(item){
