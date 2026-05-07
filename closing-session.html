@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn Closing Session — May 14, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0f0f0f;--ink2:#3a3a3a;--ink3:#6b6b6b;
+  --gold:#c8a84b;--gold2:#e8c96a;--gold-bg:#fdf8ee;--gold-border:rgba(200,168,75,0.3);
+  --li:#0077b5;--surface:#fff;--surface2:#f8f7f4;--surface3:#f1efe9;
+  --border:rgba(0,0,0,0.09);--radius:12px;
+  --green:#1a6e3a;--green-bg:#e8f5ee;
+  --purple:#4a2d8a;--purple-bg:#f0ebfa;
+  --red:#8b2e2e;--red-bg:#fdecea;
+}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:#f4f2ed;min-height:100vh;padding:2rem 1rem}
+h1,h2,h3,h4,h5{font-family:'Syne',sans-serif}
+.wrapper{max-width:860px;margin:0 auto}
+
+/* NAV BACK */
+.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-family:'Syne',sans-serif;font-weight:600;color:var(--ink3);text-decoration:none;margin-bottom:1.25rem;padding:6px 12px;border:0.5px solid var(--border);border-radius:20px;background:var(--surface);transition:all .2s}
+.nav-back:hover{color:var(--li);border-color:rgba(0,119,181,0.3)}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#1a0a3a 0%,#2d1060 55%,#4a2d8a 100%);padding:2.75rem 2rem 2rem;position:relative;overflow:hidden;border-radius:var(--radius);margin-bottom:1.5rem}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:260px;height:260px;border-radius:50%;background:rgba(200,168,75,0.12);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-50px;left:10%;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.04);pointer-events:none}
+.hero-badge{display:inline-block;background:var(--gold);color:#1a0a3a;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;padding:4px 14px;border-radius:20px;margin-bottom:1rem;text-transform:uppercase}
+.hero h1{font-size:clamp(24px,4.5vw,40px);font-weight:800;color:#fff;line-height:1.12;margin-bottom:.6rem}
+.hero-sub{font-size:14px;color:rgba(255,255,255,0.68);font-weight:300;max-width:520px;line-height:1.6;margin-bottom:1.5rem}
+.hero-stats{display:flex;gap:2rem;flex-wrap:wrap}
+.hero-stat{text-align:center}
+.hero-stat-num{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--gold);line-height:1}
+.hero-stat-label{font-size:11px;color:rgba(255,255,255,0.55);margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
+
+/* TABS */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.5rem}
+.tab{background:var(--surface);border:0.5px solid var(--border);color:var(--ink3);font-family:'Syne',sans-serif;font-size:12px;font-weight:600;padding:8px 16px;border-radius:20px;cursor:pointer;transition:all .2s;letter-spacing:.03em}
+.tab:hover{border-color:var(--li);color:var(--li)}
+.tab.active{background:var(--li);border-color:var(--li);color:#fff}
+.tab.active.gold{background:var(--gold);border-color:var(--gold);color:#1a0a3a}
+.section{display:none}
+.section.active{display:block}
+
+/* CARDS */
+.card{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.4rem;transition:border-color .2s;margin-bottom:1rem}
+.card:hover{border-color:rgba(0,119,181,0.25)}
+.card-gold{border-left:3px solid var(--gold);border-radius:0 var(--radius) var(--radius) 0}
+.card-purple{border-left:3px solid #7f77dd;border-radius:0 var(--radius) var(--radius) 0}
+.card-green{border-left:3px solid #2ecc71;border-radius:0 var(--radius) var(--radius) 0}
+
+.label{font-size:10px;font-weight:700;font-family:'Syne',sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:.5rem}
+.label-gold{color:#7a5e1a}
+.label-purple{color:#4a2d8a}
+
+/* GRID */
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.75rem}
+
+/* TAGS */
+.tag{display:inline-block;font-size:11px;padding:3px 10px;border-radius:10px;margin:2px 2px 2px 0;font-weight:600}
+.tag-gold{background:var(--gold-bg);color:#7a5e1a}
+.tag-blue{background:#e8f4fb;color:#0a527a}
+.tag-green{background:var(--green-bg);color:var(--green)}
+.tag-purple{background:var(--purple-bg);color:var(--purple)}
+.tag-red{background:var(--red-bg);color:var(--red)}
+
+/* WINS SECTION */
+.win-category{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin-bottom:.75rem;cursor:pointer;transition:all .2s}
+.win-category:hover{border-color:var(--gold);background:var(--gold-bg)}
+.win-category.selected{border-color:var(--gold);background:var(--gold-bg);border-width:1.5px}
+.win-cat-header{display:flex;align-items:center;gap:.75rem}
+.win-icon{font-size:22px;flex-shrink:0}
+.win-cat-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--ink)}
+.win-cat-desc{font-size:12px;color:var(--ink3);margin-top:3px}
+.win-examples{display:none;margin-top:.75rem;padding-top:.75rem;border-top:0.5px solid var(--border)}
+.win-category.selected .win-examples{display:block}
+.win-example{font-size:12px;color:var(--ink2);padding:.3rem 0;border-bottom:0.5px solid var(--border);line-height:1.5}
+.win-example:last-child{border-bottom:none}
+.win-example::before{content:"→ ";color:var(--gold);font-weight:700}
+
+/* WIN SHARE BUILDER */
+.share-builder{background:var(--gold-bg);border:0.5px solid var(--gold-border);border-radius:var(--radius);padding:1.25rem;margin-top:1rem}
+.share-output{background:var(--surface);border:0.5px solid var(--border);border-radius:8px;padding:1rem;min-height:80px;font-size:13px;color:var(--ink2);line-height:1.7;margin-top:.75rem;font-style:italic;white-space:pre-wrap}
+
+/* GOAL PLANNER */
+.goal-area{margin-bottom:1.25rem}
+.goal-area label{display:block;font-size:12px;font-weight:600;font-family:'Syne',sans-serif;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem}
+.goal-area input[type="text"],.goal-area textarea{width:100%;padding:10px 14px;border:0.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);background:var(--surface);outline:none;transition:border-color .2s;resize:none}
+.goal-area input[type="text"]:focus,.goal-area textarea:focus{border-color:var(--li)}
+.goal-area textarea{height:70px;line-height:1.6}
+.goal-area input[type="range"]{width:100%;margin:.25rem 0}
+
+.goal-card{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin-bottom:.75rem}
+.goal-num{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;color:var(--gold);line-height:1;margin-bottom:.25rem}
+.goal-label{font-size:12px;color:var(--ink3);margin-bottom:.75rem}
+
+/* REFLECTION */
+.reflection-q{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin-bottom:.75rem}
+.reflection-q .q-text{font-size:14px;font-weight:600;font-family:'Syne',sans-serif;color:var(--ink);margin-bottom:.75rem;line-height:1.4}
+.reflection-q textarea{width:100%;padding:10px 14px;border:0.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);background:var(--surface2);resize:none;height:80px;outline:none;line-height:1.6;transition:border-color .2s}
+.reflection-q textarea:focus{border-color:var(--li);background:var(--surface)}
+.reflection-q .q-prompt{font-size:11px;color:var(--ink3);margin-top:.4rem;font-style:italic}
+
+/* IDENTITY METER */
+.identity-track{position:relative;height:10px;background:var(--surface3);border-radius:5px;overflow:hidden;margin:.75rem 0}
+.identity-fill{height:100%;border-radius:5px;transition:width .5s cubic-bezier(.4,0,.2,1)}
+.identity-labels{display:flex;justify-content:space-between;font-size:10px;color:var(--ink3);font-family:'Syne',sans-serif;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-top:.3rem}
+
+/* CELEBRATION */
+.confetti-btn{background:var(--gold);border:none;color:#1a0a3a;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;padding:10px 22px;border-radius:8px;cursor:pointer;transition:all .2s;letter-spacing:.03em}
+.confetti-btn:hover{background:var(--gold2);transform:scale(1.02)}
+.confetti-btn:active{transform:scale(0.98)}
+.confetti-area{position:relative;min-height:60px;overflow:hidden;border-radius:var(--radius);background:var(--surface2);display:flex;align-items:center;justify-content:center;margin-top:.75rem}
+.confetti-piece{position:absolute;width:8px;height:8px;border-radius:2px;animation:fall 1.2s ease-in forwards}
+@keyframes fall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(80px) rotate(360deg);opacity:0}}
+.celebration-msg{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--ink);text-align:center;padding:1rem}
+
+/* 90-DAY TIMELINE */
+.timeline{position:relative;padding-left:1.75rem;margin:.75rem 0}
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gold),rgba(200,168,75,0.2))}
+.timeline-item{position:relative;margin-bottom:1.25rem}
+.timeline-dot{position:absolute;left:-1.75rem;top:4px;width:16px;height:16px;border-radius:50%;border:2px solid var(--gold);background:var(--surface);display:flex;align-items:center;justify-content:center}
+.timeline-dot.active{background:var(--gold)}
+.timeline-dot.active::after{content:'';width:6px;height:6px;border-radius:50%;background:#1a0a3a}
+.timeline-week{font-size:10px;font-weight:700;font-family:'Syne',sans-serif;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:.25rem}
+.timeline-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:.2rem}
+.timeline-desc{font-size:12px;color:var(--ink3);line-height:1.5}
+
+/* CHECKLIST */
+.check-item{display:flex;align-items:flex-start;gap:.75rem;padding:.65rem 0;border-bottom:0.5px solid var(--border);cursor:pointer}
+.check-item:last-child{border-bottom:none}
+.checkbox{width:18px;height:18px;border:1.5px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all .2s;background:var(--surface)}
+.checkbox.checked{background:var(--li);border-color:var(--li)}
+.checkbox.checked::after{content:'✓';color:#fff;font-size:11px;font-weight:700}
+.check-text{font-size:13px;color:var(--ink2);line-height:1.5}
+.check-text.done{text-decoration:line-through;color:var(--ink3)}
+
+/* PROGRESS SUMMARY */
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.75rem;margin:.75rem 0}
+.summary-card{background:var(--surface2);border-radius:10px;padding:.85rem;text-align:center}
+.summary-num{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--gold)}
+.summary-label{font-size:11px;color:var(--ink3);margin-top:3px;line-height:1.4}
+
+/* MISC */
+.divider{height:0.5px;background:var(--border);margin:1.25rem 0}
+.pill-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.5rem 0}
+.cta-banner{background:linear-gradient(135deg,#1a0a3a,#4a2d8a);border-radius:var(--radius);padding:1.75rem 2rem;text-align:center;margin-top:1.5rem}
+.cta-banner h3{color:#fff;font-size:20px;font-weight:800;margin-bottom:.4rem}
+.cta-banner p{color:rgba(255,255,255,0.65);font-size:13px;margin-bottom:1.25rem;line-height:1.6}
+.cta-btn{display:inline-block;background:var(--gold);color:#1a0a3a;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;padding:10px 24px;border-radius:8px;text-decoration:none;transition:all .2s;border:none;cursor:pointer}
+.cta-btn:hover{background:var(--gold2)}
+.page-footer{text-align:center;padding:2rem 0 1rem;font-size:12px;color:var(--ink3);font-family:'Syne',sans-serif;letter-spacing:.04em}
+.back-link{display:inline-block;font-size:12px;color:var(--li);text-decoration:none;font-family:'Syne',sans-serif;font-weight:600;margin-top:.5rem}
+.back-link:hover{text-decoration:underline}
+@media(max-width:520px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}.hero-stats{gap:1.25rem}}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<a href="index.html" class="nav-back">← Back to Week 9 Toolkit</a>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Bonus Closing Session · May 14, 2026</div>
+  <h1>Growth, Wins &amp;<br>What's Next</h1>
+  <p class="hero-sub">You showed up. You posted. You became visible. This session is about celebrating that shift — and setting your next 90 days with intention.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-num">9</div><div class="hero-stat-label">Weeks of growth</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">90</div><div class="hero-stat-label">Days ahead</div></div>
+    <div class="hero-stat"><div class="hero-stat-num" id="stat-wins">0</div><div class="hero-stat-label">Wins logged today</div></div>
+    <div class="hero-stat"><div class="hero-stat-num" id="stat-goals">0</div><div class="hero-stat-label">Goals set</div></div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('wins','tab0')">🏆 Share Wins</button>
+  <button class="tab" onclick="switchTab('identity','tab1')">🪞 Identity Shift</button>
+  <button class="tab" onclick="switchTab('goals','tab2')">🎯 90-Day Goals</button>
+  <button class="tab" onclick="switchTab('timeline','tab3')">📅 Your Roadmap</button>
+  <button class="tab" onclick="switchTab('reflect','tab4')">💬 Reflect</button>
+  <button class="tab" onclick="switchTab('celebrate','tab5')">🎉 Celebrate</button>
+</div>
+
+<!-- WINS -->
+<div id="wins" class="section active">
+  <div class="label label-gold" style="margin-bottom:.75rem">Step 1 — choose your win category</div>
+  <p style="font-size:13px;color:var(--ink3);margin-bottom:1rem;line-height:1.6">Every participant has wins from this cohort. Click the category that resonates most with yours — then build your share statement below.</p>
+
+  <div class="win-category" onclick="selectWin(this,'connection')">
+    <div class="win-cat-header">
+      <div class="win-icon">🤝</div>
+      <div><div class="win-cat-title">Connection wins</div><div class="win-cat-desc">New relationships that opened doors</div></div>
+    </div>
+    <div class="win-examples">
+      <div class="win-example">Connected with someone who became a collaborator, client, or mentor</div>
+      <div class="win-example">Got a DM from someone who found you through a post</div>
+      <div class="win-example">Reconnected with someone from your past through LinkedIn</div>
+      <div class="win-example">Built a relationship with a creator or thought leader in your niche</div>
+    </div>
+  </div>
+
+  <div class="win-category" onclick="selectWin(this,'content')">
+    <div class="win-cat-header">
+      <div class="win-icon">✍️</div>
+      <div><div class="win-cat-title">Content wins</div><div class="win-cat-desc">Posts that landed, resonated, or surprised you</div></div>
+    </div>
+    <div class="win-examples">
+      <div class="win-example">A post got more impressions or comments than expected</div>
+      <div class="win-example">You finally hit "post" on something vulnerable or bold</div>
+      <div class="win-example">Someone shared your post or quoted it</div>
+      <div class="win-example">You found your voice — posts now feel natural, not forced</div>
+    </div>
+  </div>
+
+  <div class="win-category" onclick="selectWin(this,'opportunity')">
+    <div class="win-cat-header">
+      <div class="win-icon">🚀</div>
+      <div><div class="win-cat-title">Opportunity wins</div><div class="win-cat-desc">Tangible results from showing up</div></div>
+    </div>
+    <div class="win-examples">
+      <div class="win-example">Got invited to speak, contribute, or collaborate</div>
+      <div class="win-example">Received a job lead, referral, or client inquiry</div>
+      <div class="win-example">Was featured, quoted, or recognized by someone else</div>
+      <div class="win-example">Built real momentum toward a professional goal</div>
+    </div>
+  </div>
+
+  <div class="win-category" onclick="selectWin(this,'mindset')">
+    <div class="win-cat-header">
+      <div class="win-icon">🧠</div>
+      <div><div class="win-cat-title">Mindset wins</div><div class="win-cat-desc">Internal shifts that change everything</div></div>
+    </div>
+    <div class="win-examples">
+      <div class="win-example">You stopped waiting to be "ready" before posting</div>
+      <div class="win-example">You let go of perfectionism and just showed up</div>
+      <div class="win-example">LinkedIn no longer feels scary or overwhelming</div>
+      <div class="win-example">You see yourself as someone with valuable ideas worth sharing</div>
+    </div>
+  </div>
+
+  <div class="card card-gold" style="margin-top:1.25rem">
+    <div class="label label-gold">Build your win share statement</div>
+    <p style="font-size:12px;color:var(--ink3);margin:.3rem 0 .75rem;line-height:1.6">Fill in the blanks — this becomes your 60-second share for the group today.</p>
+
+    <div style="display:grid;gap:.75rem;margin-bottom:.75rem">
+      <div>
+        <label style="font-size:11px;font-weight:700;font-family:'Syne',sans-serif;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:.3rem">Before this cohort, I...</label>
+        <input type="text" id="win-before" placeholder="e.g. never posted, felt invisible, didn't know what to say" oninput="buildWinStatement()" style="width:100%;padding:9px 12px;border:0.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);background:var(--surface);outline:none">
+      </div>
+      <div>
+        <label style="font-size:11px;font-weight:700;font-family:'Syne',sans-serif;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:.3rem">Now I...</label>
+        <input type="text" id="win-now" placeholder="e.g. post 3x/week, have a routine, got 3 DMs from new connections" oninput="buildWinStatement()" style="width:100%;padding:9px 12px;border:0.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);background:var(--surface);outline:none">
+      </div>
+      <div>
+        <label style="font-size:11px;font-weight:700;font-family:'Syne',sans-serif;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:.3rem">My biggest surprise was...</label>
+        <input type="text" id="win-surprise" placeholder="e.g. how many people responded to my first real post" oninput="buildWinStatement()" style="width:100%;padding:9px 12px;border:0.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);background:var(--surface);outline:none">
+      </div>
+    </div>
+
+    <div class="label" style="margin-bottom:.3rem">Your share statement preview</div>
+    <div class="share-output" id="win-output">Your statement will appear here as you type above...</div>
+    <div style="margin-top:.75rem;display:flex;gap:.5rem;flex-wrap:wrap">
+      <button onclick="copyWin()" style="padding:7px 16px;border-radius:8px;border:1.5px solid var(--li);background:transparent;color:var(--li);font-family:'Syne',sans-serif;font-size:12px;font-weight:700;cursor:pointer">Copy statement</button>
+      <button onclick="logWin()" style="padding:7px 16px;border-radius:8px;border:none;background:var(--gold);color:#1a0a3a;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;cursor:pointer">Log this win ✓</button>
+    </div>
+    <div id="win-logged" style="display:none;font-size:12px;color:var(--green);margin-top:.5rem;font-weight:600">✓ Win logged! Check your Celebrate tab.</div>
+  </div>
+</div>
+
+<!-- IDENTITY -->
+<div id="identity" class="section">
+  <div class="label label-purple" style="margin-bottom:.75rem">The shift from visibility to influence</div>
+  <p style="font-size:13px;color:var(--ink3);margin-bottom:1.25rem;line-height:1.6">The goal was never just to post. It was to become someone who is known, trusted, and sought out in their field. Where are you on that journey?</p>
+
+  <div class="card" style="margin-bottom:1rem">
+    <div class="label" style="margin-bottom:.75rem">Rate your identity shift after 9 weeks</div>
+
+    <div style="margin-bottom:1.25rem">
+      <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--ink3);margin-bottom:.4rem">
+        <span>Visibility (showing up)</span>
+        <span id="vis-val" style="font-weight:600;color:var(--ink)">50%</span>
+      </div>
+      <input type="range" min="0" max="100" value="50" step="1" id="vis-slider" oninput="updateIdentity()" style="width:100%">
+    </div>
+
+    <div style="margin-bottom:1.25rem">
+      <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--ink3);margin-bottom:.4rem">
+        <span>Credibility (being trusted)</span>
+        <span id="cred-val" style="font-weight:600;color:var(--ink)">50%</span>
+      </div>
+      <input type="range" min="0" max="100" value="50" step="1" id="cred-slider" oninput="updateIdentity()" style="width:100%">
+    </div>
+
+    <div>
+      <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--ink3);margin-bottom:.4rem">
+        <span>Influence (being sought out)</span>
+        <span id="inf-val" style="font-weight:600;color:var(--ink)">50%</span>
+      </div>
+      <input type="range" min="0" max="100" value="50" step="1" id="inf-slider" oninput="updateIdentity()" style="width:100%">
+    </div>
+
+    <div id="identity-msg" style="margin-top:1rem;padding:.75rem;background:var(--purple-bg);border-radius:8px;font-size:13px;color:var(--purple);line-height:1.6">Adjust the sliders to see your identity profile.</div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="label" style="margin-bottom:.5rem">Who were you 9 weeks ago?</div>
+      <textarea id="id-before" placeholder="How did you see yourself on LinkedIn? What held you back?" style="width:100%;padding:9px 12px;border:0.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);background:var(--surface2);outline:none;resize:none;height:100px;line-height:1.6" oninput="this.style.borderColor='var(--li)'"></textarea>
+    </div>
+    <div class="card">
+      <div class="label" style="margin-bottom:.5rem">Who are you becoming?</div>
+      <textarea id="id-after" placeholder="How do you see yourself now? What's possible that wasn't before?" style="width:100%;padding:9px 12px;border:0.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);background:var(--surface2);outline:none;resize:none;height:100px;line-height:1.6" oninput="this.style.borderColor='var(--li)'"></textarea>
+    </div>
+  </div>
+
+  <div class="card card-gold" style="margin-top:.25rem">
+    <div class="label label-gold" style="margin-bottom:.5rem">Your new LinkedIn identity statement</div>
+    <p style="font-size:12px;color:var(--ink3);margin-bottom:.75rem">Complete this sentence — then save it as the first line of your bio:</p>
+    <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap">
+      <span style="font-size:13px;color:var(--ink2);white-space:nowrap">I am a</span>
+      <input type="text" id="id-role" placeholder="your role/title" style="flex:1;min-width:120px;padding:8px 12px;border:0.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);background:var(--surface);outline:none" oninput="buildIdentity()">
+      <span style="font-size:13px;color:var(--ink2);white-space:nowrap">who helps</span>
+      <input type="text" id="id-audience" placeholder="your audience" style="flex:1;min-width:120px;padding:8px 12px;border:0.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);background:var(--surface);outline:none" oninput="buildIdentity()">
+      <input type="text" id="id-outcome" placeholder="achieve what outcome" style="flex:2;min-width:160px;padding:8px 12px;border:0.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);background:var(--surface);outline:none" oninput="buildIdentity()">
+    </div>
+    <div id="identity-stmt" style="margin-top:.75rem;padding:.75rem 1rem;background:var(--surface);border-radius:8px;border:0.5px solid var(--border);font-size:14px;color:var(--ink2);font-style:italic;line-height:1.7;min-height:48px">Your identity statement will appear here...</div>
+    <button onclick="copyIdentity()" style="margin-top:.6rem;padding:7px 16px;border-radius:8px;border:1.5px solid var(--li);background:transparent;color:var(--li);font-family:'Syne',sans-serif;font-size:12px;font-weight:700;cursor:pointer">Copy to clipboard</button>
+  </div>
+</div>
+
+<!-- GOALS -->
+<div id="goals" class="section">
+  <div class="label label-gold" style="margin-bottom:.75rem">Set your next 90-day LinkedIn goals</div>
+  <p style="font-size:13px;color:var(--ink3);margin-bottom:1.25rem;line-height:1.6">Specific goals beat vague intentions every time. Set targets across 4 areas — then your roadmap builds automatically.</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="label" style="margin-bottom:.5rem">👥 Audience growth</div>
+      <div style="margin-bottom:.75rem">
+        <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--ink3);margin-bottom:.3rem"><span>Follower goal in 90 days</span><span id="fol-val" style="font-weight:600;color:var(--ink)">500</span></div>
+        <input type="range" min="100" max="5000" value="500" step="50" id="fol-slider" oninput="document.getElementById('fol-val').textContent=this.value;updateGoalStats()" style="width:100%">
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--ink3);margin-bottom:.3rem"><span>Posts per week</span><span id="post-val" style="font-weight:600;color:var(--ink)">3</span></div>
+      <input type="range" min="1" max="7" value="3" step="1" id="post-slider" oninput="document.getElementById('post-val').textContent=this.value;updateGoalStats()" style="width:100%;margin-bottom:.5rem">
+    </div>
+
+    <div class="card">
+      <div class="label" style="margin-bottom:.5rem">✍️ Content focus</div>
+      <p style="font-size:12px;color:var(--ink3);margin-bottom:.6rem">Pick your 2–3 topic pillars:</p>
+      <div id="topic-pills" style="display:flex;flex-wrap:wrap;gap:.4rem">
+        <span class="topic-pill tag tag-blue" onclick="toggleTopic(this)" style="cursor:pointer">Leadership</span>
+        <span class="topic-pill tag tag-blue" onclick="toggleTopic(this)" style="cursor:pointer">Career growth</span>
+        <span class="topic-pill tag tag-blue" onclick="toggleTopic(this)" style="cursor:pointer">DEI & equity</span>
+        <span class="topic-pill tag tag-blue" onclick="toggleTopic(this)" style="cursor:pointer">Education</span>
+        <span class="topic-pill tag tag-blue" onclick="toggleTopic(this)" style="cursor:pointer">Community</span>
+        <span class="topic-pill tag tag-blue" onclick="toggleTopic(this)" style="cursor:pointer">Entrepreneurship</span>
+        <span class="topic-pill tag tag-blue" onclick="toggleTopic(this)" style="cursor:pointer">Wellness</span>
+        <span class="topic-pill tag tag-blue" onclick="toggleTopic(this)" style="cursor:pointer">Nonprofit</span>
+        <span class="topic-pill tag tag-blue" onclick="toggleTopic(this)" style="cursor:pointer">Tech & AI</span>
+        <span class="topic-pill tag tag-blue" onclick="toggleTopic(this)" style="cursor:pointer">Social impact</span>
+      </div>
+      <input type="text" id="custom-topic" placeholder="+ add your own topic" style="width:100%;padding:7px 10px;border:0.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:12px;color:var(--ink);background:var(--surface2);outline:none;margin-top:.6rem" onkeydown="if(event.key==='Enter')addCustomTopic()">
+    </div>
+
+    <div class="card">
+      <div class="label" style="margin-bottom:.5rem">🎯 Big swing goals</div>
+      <p style="font-size:12px;color:var(--ink3);margin-bottom:.6rem">Check 1–2 stretches you'll attempt in 90 days:</p>
+      <div id="swing-list">
+        <div class="check-item" onclick="toggleSwing(this)"><div class="checkbox"></div><div class="check-text">Launch a LinkedIn Newsletter</div></div>
+        <div class="check-item" onclick="toggleSwing(this)"><div class="checkbox"></div><div class="check-text">Host a LinkedIn Live or Event</div></div>
+        <div class="check-item" onclick="toggleSwing(this)"><div class="checkbox"></div><div class="check-text">Write a long-form article</div></div>
+        <div class="check-item" onclick="toggleSwing(this)"><div class="checkbox"></div><div class="check-text">Reach 1,000+ followers</div></div>
+        <div class="check-item" onclick="toggleSwing(this)"><div class="checkbox"></div><div class="check-text">Collaborate with another creator</div></div>
+        <div class="check-item" onclick="toggleSwing(this)"><div class="checkbox"></div><div class="check-text">Land a speaking or consulting opportunity</div></div>
+        <div class="check-item" onclick="toggleSwing(this)"><div class="checkbox"></div><div class="check-text">Build a lead magnet + featured section funnel</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="label" style="margin-bottom:.5rem">🌱 Sustainability commitment</div>
+      <p style="font-size:12px;color:var(--ink3);margin-bottom:.6rem">How will you protect your energy?</p>
+      <textarea id="sustain-goal" placeholder="e.g. I will batch content every Sunday, take LinkedIn off my phone on weekends, and review analytics once a week only." style="width:100%;padding:9px 12px;border:0.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);background:var(--surface2);outline:none;resize:none;height:110px;line-height:1.6" oninput="updateGoalStats()"></textarea>
+    </div>
+  </div>
+
+  <div class="card card-gold" style="margin-top:.25rem">
+    <div class="label label-gold" style="margin-bottom:.75rem">Your 90-day goal summary</div>
+    <div class="summary-grid" id="goal-summary">
+      <div class="summary-card"><div class="summary-num" id="sg-followers">500</div><div class="summary-label">Follower target</div></div>
+      <div class="summary-card"><div class="summary-num" id="sg-posts">3×</div><div class="summary-label">Posts per week</div></div>
+      <div class="summary-card"><div class="summary-num" id="sg-total">~117</div><div class="summary-label">Posts in 90 days</div></div>
+      <div class="summary-card"><div class="summary-num" id="sg-swings">0</div><div class="summary-label">Big swing goals</div></div>
+    </div>
+    <button onclick="logGoals()" style="margin-top:.75rem;padding:8px 20px;border-radius:8px;border:none;background:var(--gold);color:#1a0a3a;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;cursor:pointer">Save my 90-day goals ✓</button>
+    <span id="goals-logged" style="display:none;font-size:12px;color:var(--green);margin-left:.75rem;font-weight:600">✓ Goals saved!</span>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<div id="timeline" class="section">
+  <div class="label label-gold" style="margin-bottom:.75rem">Your 90-day LinkedIn roadmap</div>
+  <p style="font-size:13px;color:var(--ink3);margin-bottom:1.25rem;line-height:1.6">Here's how to think about the next 3 months — broken into focused phases so momentum doesn't fade after the cohort ends.</p>
+
+  <div class="card" style="margin-bottom:1rem">
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot active"></div>
+        <div class="timeline-week">Now — Week 1–2</div>
+        <div class="timeline-title">Lock in the routine</div>
+        <div class="timeline-desc">Your Sunday batch system is your most important habit. Protect it. Don't add anything new — just run the system you built in Week 9 consistently.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-week">Weeks 3–4</div>
+        <div class="timeline-title">Deepen your niche voice</div>
+        <div class="timeline-desc">Look back at your best 2–3 posts. What made them land? Double down on that angle, format, or topic. You are finding your signature style.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-week">Month 2 (Weeks 5–8)</div>
+        <div class="timeline-title">Activate a big swing</div>
+        <div class="timeline-desc">Launch your newsletter, host an event, or write a long-form piece. One bold move per month compounds over time. Choose your Month 2 big swing now.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-week">Month 3 (Weeks 9–12)</div>
+        <div class="timeline-title">Harvest and review</div>
+        <div class="timeline-desc">Audit your analytics. Which topics drove the most connections, DMs, or opportunities? Set your next 90-day goals based on what you now know works for you.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-week">Day 90</div>
+        <div class="timeline-title">Reflect and reset</div>
+        <div class="timeline-desc">Look back at who you were on May 14. Write a LinkedIn post about your 90-day journey. That post will be some of the most powerful content you've ever shared.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-gold">
+    <div class="label label-gold" style="margin-bottom:.5rem">Your Month 1 focus commitment</div>
+    <p style="font-size:12px;color:var(--ink3);margin-bottom:.75rem">One sentence. What will you protect and prioritize in the first 30 days?</p>
+    <textarea id="m1-commit" placeholder="e.g. In Month 1, I will run my Sunday batch system every week without skipping, post 3x, and comment on 5 posts per week." style="width:100%;padding:9px 12px;border:0.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);background:var(--surface);outline:none;resize:none;height:90px;line-height:1.6" oninput="this.style.borderColor='var(--li)'"></textarea>
+  </div>
+
+  <div class="grid-3" style="margin-top:1rem">
+    <div class="card" style="text-align:center">
+      <div style="font-size:28px;margin-bottom:.4rem">📅</div>
+      <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:.25rem">Set a calendar reminder</div>
+      <div style="font-size:12px;color:var(--ink3);line-height:1.5">Block your Sunday batch time right now. Recurring, 8–8:30am. Name it "LinkedIn Sunday."</div>
+    </div>
+    <div class="card" style="text-align:center">
+      <div style="font-size:28px;margin-bottom:.4rem">📊</div>
+      <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:.25rem">Schedule a 90-day check-in</div>
+      <div style="font-size:12px;color:var(--ink3);line-height:1.5">Put August 13, 2026 in your calendar: "LinkedIn 90-day reflection and reset."</div>
+    </div>
+    <div class="card" style="text-align:center">
+      <div style="font-size:28px;margin-bottom:.4rem">👯</div>
+      <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:.25rem">Find an accountability partner</div>
+      <div style="font-size:12px;color:var(--ink3);line-height:1.5">Pair up with a cohort member. Text each other your Sunday batch was done. Simple accountability wins.</div>
+    </div>
+  </div>
+</div>
+
+<!-- REFLECT -->
+<div id="reflect" class="section">
+  <div class="label label-purple" style="margin-bottom:.75rem">Closing reflection — 5 questions that matter</div>
+  <p style="font-size:13px;color:var(--ink3);margin-bottom:1.25rem;line-height:1.6">Take 5–10 minutes with these. Your answers are just for you — but they will shape your next chapter.</p>
+
+  <div class="reflection-q">
+    <div class="q-text">1. What did you discover about yourself through this process?</div>
+    <textarea placeholder="What surprised you about how it felt to be visible?"></textarea>
+    <div class="q-prompt">Think about: a moment you almost didn't post but did. What happened?</div>
+  </div>
+
+  <div class="reflection-q">
+    <div class="q-text">2. What belief about yourself shifted in these 9 weeks?</div>
+    <textarea placeholder="e.g. I used to believe nobody wanted to hear from me. Now I believe..."></textarea>
+    <div class="q-prompt">Start with: "I used to believe... Now I know..."</div>
+  </div>
+
+  <div class="reflection-q">
+    <div class="q-text">3. What does "influence" mean to you now vs. when you started?</div>
+    <textarea placeholder="How has your definition of influence changed?"></textarea>
+    <div class="q-prompt">There are no wrong answers — your definition is yours.</div>
+  </div>
+
+  <div class="reflection-q">
+    <div class="q-text">4. Who in your community needs to see you show up more visibly?</div>
+    <textarea placeholder="Who is watching, waiting, or would be inspired by your consistency?"></textarea>
+    <div class="q-prompt">Think beyond your current network — who could you reach in the next 90 days?</div>
+  </div>
+
+  <div class="reflection-q">
+    <div class="q-text">5. What is the one thing you will NOT go back to?</div>
+    <textarea placeholder="e.g. Lurking. Playing small. Waiting until I was an expert. Comparing my numbers..."></textarea>
+    <div class="q-prompt">This is your commitment. Say it out loud if you can.</div>
+  </div>
+
+  <div class="card card-purple" style="margin-top:.5rem">
+    <div class="label label-purple" style="margin-bottom:.5rem">Your one-word intention for the next chapter</div>
+    <p style="font-size:12px;color:var(--ink3);margin-bottom:.75rem">If you had to distill your next 90 days into one word — what would it be?</p>
+    <input type="text" id="one-word" placeholder="e.g. Bold. Consistent. Visible. Grounded. Loud. Present." style="width:100%;padding:10px 14px;border:0.5px solid var(--border);border-radius:8px;font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--ink);background:var(--surface);outline:none;letter-spacing:.03em" oninput="updateOneWord()">
+    <div id="one-word-echo" style="display:none;margin-top:.75rem;text-align:center;font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:var(--gold);letter-spacing:.04em"></div>
+  </div>
+</div>
+
+<!-- CELEBRATE -->
+<div id="celebrate" class="section">
+  <div class="label label-gold" style="margin-bottom:.75rem">You did the thing. Time to celebrate.</div>
+  <p style="font-size:13px;color:var(--ink3);margin-bottom:1.25rem;line-height:1.6">9 weeks. Showing up when it felt awkward. Posting when you weren't sure. Growing louder when the old you wanted to stay quiet. That deserves a real moment.</p>
+
+  <div class="card" style="text-align:center;padding:2rem;margin-bottom:1rem">
+    <div style="font-size:48px;margin-bottom:.75rem">🎓</div>
+    <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--ink);margin-bottom:.4rem">ZTT LinkedIn Cohort</div>
+    <div style="font-family:'Syne',sans-serif;font-size:14px;color:var(--ink3);margin-bottom:1.25rem">Week 9 Graduate · May 2026</div>
+    <div id="graduate-name" style="font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--gold);min-height:36px;margin-bottom:1rem"></div>
+    <input type="text" id="name-input" placeholder="Type your name here" style="text-align:center;width:260px;padding:10px 14px;border:0.5px solid var(--border);border-radius:8px;font-family:'Syne',sans-serif;font-size:16px;color:var(--ink);background:var(--surface2);outline:none;display:block;margin:0 auto .75rem" oninput="document.getElementById('graduate-name').textContent=this.value">
+    <button class="confetti-btn" onclick="launch()">🎉 Celebrate!</button>
+    <div class="confetti-area" id="confetti-area">
+      <div class="celebration-msg" id="cel-msg">Hit the button when your name is in!</div>
+    </div>
+  </div>
+
+  <div class="card card-gold" style="margin-bottom:1rem">
+    <div class="label label-gold" style="margin-bottom:.75rem">Your wins from today's session</div>
+    <div id="logged-wins-list">
+      <div style="font-size:13px;color:var(--ink3);font-style:italic;padding:.5rem 0">No wins logged yet — head to the Share Wins tab to add yours.</div>
+    </div>
+    <div id="logged-goals-list" style="margin-top:.75rem"></div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:1rem">
+    <div class="card">
+      <div class="label" style="margin-bottom:.5rem">Share your graduation post</div>
+      <p style="font-size:12px;color:var(--ink3);margin-bottom:.75rem;line-height:1.6">This week, post on LinkedIn about completing the ZTT cohort. Tag your cohort mates. Inspire the next person.</p>
+      <div class="pill-row">
+        <span class="tag tag-purple">#ZTTCohort</span>
+        <span class="tag tag-blue">#LinkedInInfluence</span>
+        <span class="tag tag-green">#Visibility</span>
+        <span class="tag tag-gold">#LinkedInTips</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="label" style="margin-bottom:.5rem">What's next</div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="checkbox"></div><div class="check-text">Add cohort to LinkedIn Featured section</div></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="checkbox"></div><div class="check-text">Connect with all cohort members</div></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="checkbox"></div><div class="check-text">Post your graduation story</div></div>
+      <div class="check-item" onclick="toggleCheck(this)"><div class="checkbox"></div><div class="check-text">Book your first 90-day check-in</div></div>
+    </div>
+  </div>
+
+  <div class="cta-banner">
+    <h3>The cohort ends. The journey doesn't.</h3>
+    <p>You now have a system, a voice, and a community. The only difference between where you are and where you want to be is continued consistency. You have proven you can do it.</p>
+    <a href="index.html" class="cta-btn">← Review Week 9 Toolkit</a>
+  </div>
+</div>
+
+<div class="page-footer">ZTT LinkedIn Cohort · Closing Session · May 14, 2026 · <a href="index.html" class="back-link">Week 9 Toolkit</a></div>
+</div>
+
+<script>
+var winCount=0,goalCount=0,loggedWins=[],swingCount=0;
+
+function switchTab(id,tabId){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function selectWin(el,type){
+  document.querySelectorAll('.win-category').forEach(w=>w.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function buildWinStatement(){
+  var before=document.getElementById('win-before').value.trim();
+  var now=document.getElementById('win-now').value.trim();
+  var surprise=document.getElementById('win-surprise').value.trim();
+  var out='';
+  if(before) out+='Before this ZTT cohort, I '+before+'.\n\n';
+  if(now) out+='Now I '+now+'.\n\n';
+  if(surprise) out+='My biggest surprise? '+surprise+'.';
+  document.getElementById('win-output').textContent=out||'Your statement will appear here as you type above...';
+}
+
+function copyWin(){
+  var txt=document.getElementById('win-output').textContent;
+  navigator.clipboard.writeText(txt).catch(()=>{});
+  alert('Statement copied!');
+}
+
+function logWin(){
+  var stmt=document.getElementById('win-output').textContent;
+  if(stmt.includes('Your statement')) return;
+  loggedWins.push(stmt);
+  winCount++;
+  document.getElementById('stat-wins').textContent=winCount;
+  document.getElementById('win-logged').style.display='block';
+  updateCelebrate();
+}
+
+function updateCelebrate(){
+  var list=document.getElementById('logged-wins-list');
+  if(loggedWins.length===0) return;
+  list.innerHTML='';
+  loggedWins.forEach(function(w,i){
+    var d=document.createElement('div');
+    d.style.cssText='padding:.6rem;background:var(--gold-bg);border-radius:8px;margin-bottom:.5rem;font-size:13px;color:var(--ink2);line-height:1.6;border:0.5px solid var(--gold-border)';
+    d.innerHTML='<strong style="font-size:10px;font-family:Syne,sans-serif;text-transform:uppercase;letter-spacing:.06em;color:var(--gold)">Win '+(i+1)+'</strong><br>'+w.replace(/\n/g,'<br>');
+    list.appendChild(d);
+  });
+}
+
+function updateIdentity(){
+  var v=parseInt(document.getElementById('vis-slider').value);
+  var c=parseInt(document.getElementById('cred-slider').value);
+  var inf=parseInt(document.getElementById('inf-slider').value);
+  document.getElementById('vis-val').textContent=v+'%';
+  document.getElementById('cred-val').textContent=c+'%';
+  document.getElementById('inf-val').textContent=inf+'%';
+  var avg=Math.round((v+c+inf)/3);
+  var msgs=[
+    [0,33,'You are building the foundation. Visibility first — keep showing up. The credibility and influence will follow.'],
+    [34,60,'You are in the growth phase. You are being seen and starting to be trusted. Stay consistent and the influence compounds.'],
+    [61,80,'You are becoming a known voice. Your community sees you as credible. Now focus on being sought out.'],
+    [81,100,'You are operating as an influencer. You are visible, trusted, and people are coming to you. This is the goal.']
+  ];
+  var msg=msgs[0][2];
+  msgs.forEach(function(m){if(avg>=m[0]&&avg<=m[1])msg=m[2];});
+  document.getElementById('identity-msg').textContent=msg;
+}
+
+function buildIdentity(){
+  var role=document.getElementById('id-role').value.trim();
+  var aud=document.getElementById('id-audience').value.trim();
+  var out=document.getElementById('id-outcome').value.trim();
+  var stmt='';
+  if(role) stmt+='I am a '+role;
+  if(aud) stmt+=' who helps '+aud;
+  if(out) stmt+=' '+out+'.';
+  document.getElementById('identity-stmt').textContent=stmt||'Your identity statement will appear here...';
+  document.getElementById('identity-stmt').style.fontStyle=stmt?'normal':'italic';
+}
+
+function copyIdentity(){
+  var txt=document.getElementById('identity-stmt').textContent;
+  navigator.clipboard.writeText(txt).catch(()=>{});
+  alert('Identity statement copied!');
+}
+
+function toggleTopic(el){
+  el.classList.toggle('tag-blue');
+  el.classList.toggle('tag-gold');
+  updateGoalStats();
+}
+
+function addCustomTopic(){
+  var val=document.getElementById('custom-topic').value.trim();
+  if(!val) return;
+  var span=document.createElement('span');
+  span.className='topic-pill tag tag-gold';
+  span.style.cursor='pointer';
+  span.textContent=val;
+  span.onclick=function(){toggleTopic(this)};
+  document.getElementById('topic-pills').appendChild(span);
+  document.getElementById('custom-topic').value='';
+}
+
+function toggleSwing(el){
+  var cb=el.querySelector('.checkbox');
+  var txt=el.querySelector('.check-text');
+  cb.classList.toggle('checked');
+  txt.classList.toggle('done');
+  swingCount=document.querySelectorAll('#swing-list .checkbox.checked').length;
+  document.getElementById('sg-swings').textContent=swingCount;
+  updateGoalStats();
+}
+
+function toggleCheck(el){
+  var cb=el.querySelector('.checkbox');
+  var txt=el.querySelector('.check-text');
+  cb.classList.toggle('checked');
+  txt.classList.toggle('done');
+}
+
+function updateGoalStats(){
+  var fol=document.getElementById('fol-slider').value;
+  var posts=document.getElementById('post-slider').value;
+  var total=Math.round(parseInt(posts)*13);
+  document.getElementById('sg-followers').textContent=parseInt(fol).toLocaleString();
+  document.getElementById('sg-posts').textContent=posts+'×';
+  document.getElementById('sg-total').textContent='~'+total;
+  document.getElementById('sg-swings').textContent=swingCount;
+}
+
+function logGoals(){
+  goalCount=4;
+  document.getElementById('stat-goals').textContent=goalCount;
+  document.getElementById('goals-logged').style.display='inline';
+  var fol=document.getElementById('fol-slider').value;
+  var posts=document.getElementById('post-slider').value;
+  var gl=document.getElementById('logged-goals-list');
+  gl.innerHTML='<div style="padding:.6rem;background:var(--purple-bg);border-radius:8px;font-size:13px;color:var(--purple);border:0.5px solid rgba(74,45,138,0.2)"><strong style="font-size:10px;font-family:Syne,sans-serif;text-transform:uppercase;letter-spacing:.06em">90-day goals</strong><br>Followers: '+parseInt(fol).toLocaleString()+' · Posts/week: '+posts+' · Big swings: '+swingCount+'</div>';
+}
+
+function updateOneWord(){
+  var w=document.getElementById('one-word').value.trim();
+  var echo=document.getElementById('one-word-echo');
+  if(w){echo.style.display='block';echo.textContent=w.toUpperCase();}
+  else{echo.style.display='none';}
+}
+
+var colors=['#c8a84b','#0077b5','#4a2d8a','#1a6e3a','#e8c96a','#b5d4f4','#f0ebfa','#e8f5ee'];
+function launch(){
+  var name=document.getElementById('name-input').value.trim();
+  var area=document.getElementById('confetti-area');
+  area.innerHTML='';
+  if(!name){area.innerHTML='<div class="celebration-msg">Add your name first!</div>';return;}
+  area.innerHTML='<div class="celebration-msg" style="color:var(--gold)">🎉 Congratulations, '+name+'! You did it! 🎉</div>';
+  for(var i=0;i<40;i++){
+    var p=document.createElement('div');
+    p.className='confetti-piece';
+    p.style.cssText='left:'+Math.random()*100+'%;top:'+(Math.random()*20-30)+'px;background:'+colors[Math.floor(Math.random()*colors.length)]+';animation-delay:'+Math.random()*0.6+'s;animation-duration:'+(0.8+Math.random()*0.8)+'s;width:'+(6+Math.random()*8)+'px;height:'+(6+Math.random()*8)+'px';
+    area.appendChild(p);
+  }
+}
+</script>
+</body>
+</html>
