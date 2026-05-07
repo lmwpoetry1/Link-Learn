@@ -1,2 +1,2 @@
-# Link-Learn
+# Linkedin-toolkit
 LinkedIn Learning Resources 
